@@ -1,0 +1,174 @@
+.container {
+  min-height: 100vh;
+  background: #f8f6f1;
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2f2f3a;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #6b706d;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.userEmail {
+  font-size: 14px;
+  color: #6b706d;
+}
+
+.logoutButton {
+  padding: 10px 20px;
+  background: #7a5830;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logoutButton:hover {
+  background: #6f4b2c;
+}
+
+.loading,
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b706d;
+  font-size: 18px;
+}
+
+.tableContainer {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background: #f8f6f1;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.table th {
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #2f2f3a;
+}
+
+.table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 14px;
+  color: #2f2f3a;
+}
+
+.table tbody tr:hover {
+  background: #fafafa;
+}
+
+.dateCell {
+  white-space: nowrap;
+  color: #6b706d;
+  font-size: 13px;
+}
+
+.nameCell {
+  font-weight: 600;
+  color: #2f2f3a;
+}
+
+.emailLink,
+.phoneLink {
+  color: #4a9b8e;
+  text-decoration: none;
+}
+
+.emailLink:hover,
+.phoneLink:hover {
+  text-decoration: underline;
+}
+
+.noPhone {
+  color: #9ca3af;
+}
+
+.detailsButton {
+  padding: 6px 12px;
+  background: #f8f6f1;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #2f2f3a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.detailsButton:hover {
+  background: #e5e7eb;
+}
+
+@media (max-width: 1024px) {
+  .table {
+    font-size: 12px;
+  }
+
+  .table th,
+  .table td {
+    padding: 12px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .tableContainer {
+    overflow-x: scroll;
+  }
+
+  .table {
+    min-width: 1000px;
+  }
+}
+

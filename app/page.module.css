@@ -1,0 +1,659 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 32px 16px 64px;
+    gap: 32px;
+  }
+}
+
+.heroGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .heroGrid {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.heroSection {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 32px;
+  padding: 36px 40px;
+  color: #1f2a2e;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 28px 22px;
+  }
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #eef2f1;
+  color: #2f5d62;
+}
+
+.heroHeading {
+  font-size: 40px;
+  margin: 16px 0 12px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #1f2a2e;
+}
+
+@media (max-width: 768px) {
+  .heroHeading {
+    font-size: 32px;
+  }
+}
+
+.heroSubheading {
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 600px;
+  color: #4a5859;
+}
+
+.benefitsList {
+  list-style: none;
+  margin: 28px 0 24px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.benefitItem {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #f4f6f5;
+  color: #2b3a39;
+  font-size: 15px;
+  border: 1px solid #e2e7e4;
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: #2f5d62;
+  color: #fdfdfc;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 18px 32px rgba(47, 93, 98, 0.35);
+}
+
+.ctaHelper {
+  font-size: 14px;
+  color: #5d6a6c;
+}
+
+.microTestimonial {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #4a5859;
+}
+
+.microTestimonial span {
+  display: block;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.quizSection {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+}
+.availabilityBanner {
+  background: #fdfbf7;
+  border-radius: 18px;
+  padding: 20px 24px;
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e8dfce;
+}
+
+.availabilityLabel {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #3f6b63;
+  font-weight: 700;
+}
+
+.availabilityValue {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 6px 0;
+  color: #1f1f1f;
+}
+
+.availabilityMeta {
+  color: #555;
+  font-size: 15px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.1);
+  max-width: 640px;
+  width: 100%;
+  padding: 48px 40px;
+  position: relative;
+  animation: slideUp 0.5s ease-out;
+}
+
+@media (max-width: 640px) {
+  .card {
+    border-radius: 18px;
+    padding: 28px 22px;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.formTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2a2e;
+  margin-bottom: 8px;
+}
+
+.formSubtitle {
+  color: #556063;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.progressMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #7a7a8a;
+  margin-bottom: 12px;
+}
+
+.progressBar {
+  width: 100%;
+  height: 6px;
+  background: #edf1ef;
+  border-radius: 3px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #9fc9ba 0%, #4d7563 100%);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.questionContainer {
+  margin-bottom: 28px;
+}
+
+.questionTitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2a2e;
+  margin-bottom: 24px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.optionsGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+.optionButton {
+  padding: 20px 24px;
+  border: 2px solid #dfe5e2;
+  border-radius: 14px;
+  background: white;
+  font-size: 17px;
+  font-weight: 500;
+  color: #253439;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.optionButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  transition: left 0.45s;
+}
+
+.optionButton:hover {
+  border-color: #4d7563;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(77, 117, 99, 0.25);
+}
+
+.optionButton:hover::before {
+  left: 100%;
+}
+
+.optionButtonActive {
+  border-color: transparent;
+  background: linear-gradient(135deg, #6f9582 0%, #2f5d62 100%);
+  color: white;
+  box-shadow: 0 12px 32px rgba(47, 93, 98, 0.35);
+}
+
+.backButton {
+  background: transparent;
+  border: none;
+  color: #4d7563;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 12px 0;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.backButton:hover {
+  color: #2f5d62;
+  transform: translateX(-4px);
+}
+
+.footer {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.footerText {
+  font-size: 14px;
+  color: #768183;
+  margin-bottom: 4px;
+}
+
+.formHelper {
+  font-size: 13px;
+  color: #9aa3a3;
+}
+
+.trustSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.trustIntro {
+  text-align: center;
+}
+
+.trustHeading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2a2e;
+  margin-bottom: 4px;
+}
+
+.trustSubheading {
+  font-size: 15px;
+  color: #6b706d;
+}
+
+.trustStrip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  background: #f8f6f1;
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: inset 0 0 0 1px rgba(210, 198, 179, 0.6);
+}
+
+.trustMetric {
+  text-align: center;
+}
+
+.trustValue {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2f5d62;
+}
+
+.trustLabel {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  color: #6b706d;
+}
+
+.contactStrip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  background: linear-gradient(120deg, #fdf7ef, #f6e9d7);
+  border-radius: 18px;
+  padding: 20px 24px;
+  border: 1px solid rgba(204, 164, 115, 0.4);
+  flex-wrap: wrap;
+}
+
+.contactDetails {
+  flex: 1;
+  min-width: 220px;
+}
+
+.contactHeading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #6f4b2c;
+}
+
+.contactSubheading {
+  color: #8a5e33;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.contactActions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #7a5830;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #fffdf8;
+  border: none;
+  box-shadow: 0 12px 24px rgba(122, 88, 48, 0.3);
+}
+
+.contactLink {
+  font-weight: 600;
+  color: #7a5830;
+  text-decoration: underline;
+}
+
+.testimonialSection {
+  background: #f9fafb;
+  border-radius: 28px;
+  padding: 40px 36px;
+  box-shadow: inset 0 0 0 1px #e5e7eb;
+}
+
+.testimonialIntro {
+  margin-bottom: 24px;
+}
+
+.testimonialHeading {
+  font-size: 28px;
+  margin-top: 8px;
+  color: #1f2937;
+}
+
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.testimonialCard {
+  background: white;
+  border-radius: 20px;
+  padding: 20px 22px;
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.07);
+  border: 1px solid #f3f4f6;
+}
+
+.testimonialQuote {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #1f2937;
+  margin-bottom: 14px;
+}
+
+.testimonialAuthor {
+  font-weight: 600;
+  color: #111827;
+}
+
+.testimonialMeta {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+@media (max-width: 640px) {
+  .heroHighlights {
+    grid-template-columns: 1fr;
+  }
+
+  .progressMeta {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .optionsGrid {
+    gap: 12px;
+  }
+
+  .optionButton {
+    font-size: 16px;
+    padding: 18px 20px;
+  }
+
+  .contactStrip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contactActions {
+    width: 100%;
+  }
+
+  .contactButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .testimonialSection {
+    padding: 28px 20px;
+  }
+}
+
+.contactPrompt {
+  text-align: center;
+  color: #5a5a6f;
+  font-size: 15px;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputLabel {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2f2f3a;
+}
+
+.textInput {
+  padding: 14px 18px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  color: #1a1a1a;
+  background: white;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.textInput:focus {
+  outline: none;
+  border-color: #4a9b8e;
+  box-shadow: 0 0 0 3px rgba(74, 155, 142, 0.1);
+}
+
+.textInput::placeholder {
+  color: #9ca3af;
+}
+
+.submitButton {
+  margin-top: 8px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4a9b8e 0%, #3d7f73 100%);
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(74, 155, 142, 0.3);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(74, 155, 142, 0.4);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .contactPrompt {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .contactForm {
+    gap: 18px;
+  }
+
+  .textInput {
+    padding: 14px 16px;
+    font-size: 16px;
+  }
+
+  .submitButton {
+    padding: 16px 22px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) and (orientation: landscape) {
+  .card {
+    padding: 24px 20px;
+  }
+
+  .questionTitle {
+    font-size: 18px;
+  }
+
+  .optionButton {
+    min-height: 52px;
+  }
+}
+

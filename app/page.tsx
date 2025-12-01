@@ -19,7 +19,8 @@ const benefits = [
 ];
 
 const microTestimonial = {
-  quote: "They pre-qualified us quickly and secured mom’s room within a week.",
+  quote:
+    "Tatiana pre-qualified us quickly and secured mom’s room within a week.",
   author: "Emily R.",
 };
 

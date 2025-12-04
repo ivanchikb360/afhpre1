@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
-// import { useRouter } from "next/navigation"; // Commented out - not needed without auth
+import { useRouter } from "next/navigation";
 import styles from "./admin.module.css";
 
 interface Lead {
@@ -25,8 +25,8 @@ interface Lead {
 export default function AdminDashboard() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [loading, setLoading] = useState(true);
-  // const [user, setUser] = useState<any>(null); // Commented out - not needed without auth
-  // const router = useRouter(); // Commented out - not needed without auth
+  const [user, setUser] = useState<any>(null);
+  const router = useRouter();
   const supabase = createClient();
 
   const fetchLeads = useCallback(async () => {
@@ -49,8 +49,6 @@ export default function AdminDashboard() {
     }
   }, [supabase]);
 
-  // Auth check commented out - uncomment when Supabase is configured
-  /*
   const checkAuth = useCallback(async () => {
     const {
       data: { session },
@@ -64,20 +62,16 @@ export default function AdminDashboard() {
     setUser(session.user);
     fetchLeads();
   }, [supabase, router, fetchLeads]);
-  */
 
   useEffect(() => {
-    // checkAuth(); // Commented out
-    fetchLeads(); // Directly fetch leads without auth check
-  }, [fetchLeads]);
+    checkAuth();
+  }, [checkAuth]);
 
-  // Logout handler commented out - uncomment when Supabase is configured
-  /*
   const handleLogout = async () => {
     await supabase.auth.signOut();
     router.push("/admin/login");
+    router.refresh();
   };
-  */
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleString("en-US", {
@@ -114,11 +108,10 @@ export default function AdminDashboard() {
           </p>
         </div>
         <div className={styles.headerActions}>
-          {/* Auth UI commented out - uncomment when Supabase is configured */}
-          {/* <span className={styles.userEmail}>{user?.email}</span>
+          <span className={styles.userEmail}>{user?.email}</span>
           <button onClick={handleLogout} className={styles.logoutButton}>
             Logout
-          </button> */}
+          </button>
         </div>
       </header>
 

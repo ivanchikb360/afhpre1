@@ -2,11 +2,23 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function middleware(request: NextRequest) {
-  // Skip auth if Supabase is not configured
+  // Protect admin routes - require Supabase to be configured
   if (
     !process.env.NEXT_PUBLIC_SUPABASE_URL ||
     !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   ) {
+    // If Supabase not configured, block admin access in production
+    if (request.nextUrl.pathname.startsWith("/admin")) {
+      if (process.env.NODE_ENV === "production") {
+        // In production, block access if Supabase not configured
+        return NextResponse.json(
+          { error: "Admin access requires Supabase configuration" },
+          { status: 503 }
+        );
+      }
+      // In development, allow access
+      return NextResponse.next();
+    }
     return NextResponse.next();
   }
 

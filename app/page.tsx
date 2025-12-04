@@ -90,12 +90,12 @@ export default function Prelander() {
     },
     {
       id: "memoryCare",
-      title: "Is memory care or dementia support required?",
+      title: "Is mental health care required?",
       options: [
-        { value: "no", label: "No memory care needed" },
-        { value: "mild", label: "Mild memory changes" },
-        { value: "moderate", label: "Moderate dementia/Alzheimer's" },
-        { value: "severe", label: "Severe memory care needs" },
+        { value: "no", label: "No mental health care needed" },
+        { value: "mild", label: "Mild support needed" },
+        { value: "moderate", label: "Moderate mental health support" },
+        { value: "severe", label: "Significant mental health care needs" },
       ],
     },
     {

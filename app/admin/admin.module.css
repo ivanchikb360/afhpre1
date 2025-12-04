@@ -244,19 +244,16 @@
   gap: 4px;
 }
 
-.dateRelative {
+.dateFull {
   color: #2f2f3a;
   font-weight: 600;
   font-size: 14px;
+  display: block;
 }
 
-.dateFull {
+.dateRelative {
   color: #9ca3af;
   font-size: 12px;
-  display: none;
-}
-
-.table tbody tr:hover .dateFull {
   display: block;
 }
 

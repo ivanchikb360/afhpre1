@@ -155,7 +155,7 @@ export default function AdminDashboard() {
       "Searching For",
       "Care Level",
       "Mobility Level",
-      "Memory Care",
+      "Mental Health Care",
       "Medical Needs",
       "Price Range",
       "Timeline",
@@ -315,11 +315,11 @@ export default function AdminDashboard() {
                   <tr key={lead.id}>
                     <td className={styles.dateCell}>
                       <div className={styles.dateWrapper}>
+                        <span className={styles.dateFull}>
+                          {formatFullDate(lead.submitted_at)}
+                        </span>
                         <span className={styles.dateRelative}>
                           {formatDate(lead.submitted_at)}
-                        </span>
-                        <span className={styles.dateFull} title={formatFullDate(lead.submitted_at)}>
-                          {formatFullDate(lead.submitted_at)}
                         </span>
                       </div>
                     </td>
@@ -431,7 +431,7 @@ export default function AdminDashboard() {
                   </span>
                 </div>
                 <div className={styles.detailRow}>
-                  <span className={styles.detailLabel}>Memory Care:</span>
+                  <span className={styles.detailLabel}>Mental Health Care:</span>
                   <span className={styles.detailValue}>
                     {formatValue(selectedLead.memory_care)}
                   </span>

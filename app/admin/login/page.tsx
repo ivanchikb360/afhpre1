@@ -18,17 +18,61 @@ export default function LoginPage() {
     setLoading(true);
     setError("");
 
-    const { error: signInError } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+    try {
+      // Check if Supabase client is properly initialized
+      if (!supabase || !supabase.auth) {
+        throw new Error(
+          "Supabase client not initialized. Please check your configuration."
+        );
+      }
 
-    if (signInError) {
-      setError(signInError.message);
+      // Wrap the login call with a timeout
+      const loginWithTimeout = async () => {
+        return new Promise(async (resolve, reject) => {
+          const timeout = setTimeout(() => {
+            reject(
+              new Error(
+                "Login timeout. The request took too long. Please check your connection and try again."
+              )
+            );
+          }, 15000); // 15 second timeout
+
+          try {
+            const result = await supabase.auth.signInWithPassword({
+              email,
+              password,
+            });
+            clearTimeout(timeout);
+            resolve(result);
+          } catch (error) {
+            clearTimeout(timeout);
+            reject(error);
+          }
+        });
+      };
+
+      const { data, error: signInError } = (await loginWithTimeout()) as any;
+
+      if (signInError) {
+        setError(signInError.message || "Invalid email or password");
+        setLoading(false);
+        return;
+      }
+
+      if (!data?.user) {
+        setError("Login failed. Please try again.");
+        setLoading(false);
+        return;
+      }
+
+      // Success - redirect
+      window.location.href = "/admin";
+    } catch (err: any) {
+      console.error("Login error:", err);
+      setError(
+        err?.message || "An unexpected error occurred. Please try again."
+      );
       setLoading(false);
-    } else {
-      router.push("/admin");
-      router.refresh();
     }
   };
 

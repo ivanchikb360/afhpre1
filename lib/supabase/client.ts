@@ -16,6 +16,11 @@ export function createClient() {
         getSession: () =>
           Promise.resolve({ data: { session: null }, error: null }),
         signOut: () => Promise.resolve({ error: null }),
+        signInWithPassword: () =>
+          Promise.resolve({
+            data: { user: null, session: null },
+            error: { message: "Supabase not configured" },
+          }),
       },
     } as any;
   }
